@@ -10,12 +10,6 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/jumbotron.css">
-    <style type="text/css">
-      #map-canvas {
-        height: 500px;
-      }
-    </style>
-
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,9 +36,6 @@
             });
         });
 
-        function open(){
-          alert("id");
-        }
     </script>
 
 <script type="text/javascript">
@@ -53,46 +44,6 @@
     $('.row-offcanvas').toggleClass('active');
   });
 });
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDla0vsr6AO7fhgej9-5gADFw7bMPH-oS8&sensor=false"></script>
-<script type="text/javascript">
-  var map = null;
-
-  function initMap() {
-    var mapOptions = {
-      center: new google.maps.LatLng(-7.804206, 110.364442),
-      zoom: 10,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    map = new google.maps.Map(document.getElementById("map-canvas"),
-                                      mapOptions);
-   
-  }
-
-  function showlocation() {
-     // One-shot position request.
-      navigator.geolocation.getCurrentPosition(callback);
-  }
-     
-  function callback(position) {
-     
-    var lat = position.coords.latitude;
-    var lon = position.coords.longitude;
-         
-    var latLong = new google.maps.LatLng(lat, lon);
-     
-            var marker = new google.maps.Marker({
-                position: latLong,
-                title: "Lokasi Anda Sekarang.."
-            });     
-             
-            marker.setMap(map);
-    map.setZoom(15);
-    map.setCenter(marker.getPosition());
-  }
-   
-  google.maps.event.addDomListener(window, 'load', initMap);
 </script>
   </head>
   <body>
@@ -136,6 +87,7 @@
                   <li><a href="#">About Gadga</a></li>
                   </ul>
 
+            </div>
 <!-- Modal -->
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -154,10 +106,8 @@
     </div>
   </div>
 </div>
-
-            </div>
             <!-- main area -->
-            <div class="col-xs-12 col-md-9" id="map-canvas">
+            <div class="col-xs-12 col-md-9" id="area">
             </div>
             <!-- /.col-xs-12 main -->
         </div>
