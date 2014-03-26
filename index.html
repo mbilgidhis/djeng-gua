@@ -37,13 +37,23 @@
           type: "post",
         }).done(function(gua){
           $.each( gua.data, function( i, val ) {
-              var transform = {'tag':'li', 'children':[{'tag':'a','href':'area.html?id=${id}','html':'${name}'}]};
-              $('#ddarea').json2html(val.provinsi,transform);
+              $('#ddarea').append("<li><a href='javascript:open("+val.provinsi.id+")'>"+val.provinsi.name+"</a></li>");
             });
         });
 
-        function open(){
-          alert("id");
+        function open(id){
+          var listArea = $.ajax({
+            url:"http://gua.antonwibisono.com/api/public/caves/",
+            apiToken: "434refce",
+            dataType: "json",
+            type: "post",
+          }).done(function(area){
+              $('#map-canvas').removeAttr('style');
+              $('#map-canvas').html("<div class='media' id='area'>");
+              $.each(area.data, function(a, gua){
+                $("#area").append('<a class="pull-left" href="#"><img class="media-object" src="images/item.png" alt="item" width="100px"></a><div class="media-body"><h4 class="media-heading">'+gua.name+'</h4><p>'+gua.description+'</p><br></div>');
+              });
+          });
         }
     </script>
 
@@ -157,8 +167,7 @@
 
             </div>
             <!-- main area -->
-            <div class="col-xs-12 col-md-9" id="map-canvas">
-            </div>
+            <div class="col-xs-12 col-md-9" id="map-canvas"></div>
             <!-- /.col-xs-12 main -->
         </div>
         <!--/.row-->
