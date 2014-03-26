@@ -51,7 +51,7 @@
               $('#map-canvas').removeAttr('style');
               $('#map-canvas').html("<div class='media' id='area'>");
               $.each(area.data, function(a, gua){
-                $("#area").append('<a class="pull-left" href="#"><img class="media-object" src="images/item.png" alt="item" width="100px"></a><div class="media-body"><h4 class="media-heading">'+gua.name+'</h4><p>'+gua.description+'</p><br></div>');
+                $("#area").append('<a class="pull-left" href="#"><img class="media-object" src="images/item.png" alt="item" width="100px"></a><div class="media-body"><h4 class="media-heading"><a href="#">'+gua.name+'</a></h4><p>'+gua.description.substr(0,550)+'...</p></div><hr>');
               });
           });
         }
