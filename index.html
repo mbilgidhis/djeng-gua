@@ -39,8 +39,23 @@
           $.each( gua.data, function( i, val ) {
               $('#ddarea').append("<li><a href='javascript:open("+val.provinsi.id+")'>"+val.provinsi.name+"</a></li>");
             });
-          $('#info').append('<li><a href="#">Tentang Gua</a></li><li><a href="#">Jenis Gua</a></li><li><a href="#">Peralatan Susur Gua</a></li><li><a href="javascript:sulit()">Tingkat Kesulitan Gua</a></li><li><a href="#">Biota Gua</a></li><li><a href="#">Ornamen Gua</a></li>');
+          $('#info').append('<li><a href="javascript:tentangGua()">Tentang Gua</a></li><li><a href="javascript:jenisGua()">Jenis Gua</a></li><li><a href="javascript:alatSusur()">Peralatan Susur Gua</a></li><li><a href="javascript:sulit()">Tingkat Kesulitan Gua</a></li><li><a href="javascript:biota()">Biota Gua</a></li><li><a href="#">Ornamen Gua</a></li>');
         });
+
+        function biota(){
+          var biota = $.ajax({
+            url:"http://gua.antonwibisono.com/api/public/getbiotatype/",
+            apiToken: "434refce",
+            dataType: "json",
+            type: "post",
+          }).done(function(bio){
+              $('#map-canvas').removeAttr('style');
+              $('#map-canvas').html("<div class='media' id='biotaGua'>");
+              $.each(bio.data, function(a, biot){
+                $('#biotaGua').append('<h3>'+biot.name+'</h3><p>'+biot.description+'</p>');
+              });
+          });
+        }
 
         function open(id){
           var listArea = $.ajax({
@@ -85,17 +100,54 @@
               $("#map-canvas").html("<div id='pergoa'>");
               $.each(goa.data, function(b, g){
                 if(id == g.id){
-                $.each(g.coordinates, function(c, h){
-
+                
                   $("#pergoa").append("<div class='jumbotron'><img class='media-object' src='images/item.png' alt='item' width='100px'></div>");
                   $("#pergoa").append("<h3>"+g.name+"</h3>");
-                  $("#pergoa").append("<div class='row'><div class='col-md-6 col-sm-6'><h4>Tingkat Kesulitan "+g.difficulty.name+"</h4><h5>"+g.type.name+"</h5></div><div class='col-md-6 col-sm-6'><p>S"+h.latitude+" E"+h.longitude+"</p><p>"+g.kelurahan.name+", "+g.kecamatan.name+", "+g.kabupaten.name+"</p></div></div>");
+                  $.each(g.coordinates, function(c, h){
+                    $("#pergoa").append("<div class='row'><div class='col-md-6 col-sm-6'><h4>Tingkat Kesulitan "+g.difficulty.name+"</h4><h5>"+g.type.name+"</h5></div><div class='col-md-6 col-sm-6'><p>S"+h.latitude+" E"+h.longitude+"</p><p>"+g.kelurahan.name+", "+g.kecamatan.name+", "+g.kabupaten.name+"</p></div></div>");
+                    });
                   $("#pergoa").append("<p>"+g.description+"</p><hr>");
                 
-                });
+                
                 }
               });
           });
+        }
+
+        function jenisGua(){
+          var jGua = $.ajax({
+            url:"http://gua.antonwibisono.com/api/public/getcavetype/",
+            apiToken: "434refce",
+            dataType: "json",
+            type: "post", 
+          }).done(function(jenGua){
+              $('#map-canvas').removeAttr('style');
+              $('#map-canvas').html('<div id ="jenis_gua">');
+              $.each(jenGua.data, function(x, jg){
+                  $('#jenis_gua').append('<h3>'+jg.name+'</h3><p>'+jg.description+'</p>');
+              });
+          });
+        }
+
+        function alatSusur(){
+          var alSur = $.ajax({
+            url:"http://gua.antonwibisono.com/api/public/getgearstype/",
+            apiToken: "434refce",
+            dataType: "json",
+            type: "post",            
+          }).done(function(alSusur){
+              $('#map-canvas').removeAttr('style');
+              $('#map-canvas').html('<div id ="alat_susur">');
+              $.each(alSusur.data, function(a, as){
+                   $('#alat_susur').append('<h3>'+as.name+'</h3><p>'+as.description+'</p>');
+              })        
+          });
+        }
+
+        function tentangGua(){
+          $("#map-canvas").removeAttr("style");
+          $("#map-canvas").html("<div id='tentang_gua'>")
+          $("#tentang_gua").append("<h3>Tentang Gua</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud xercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>")
         }
     </script>
 
