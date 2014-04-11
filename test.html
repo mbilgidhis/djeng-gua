@@ -173,13 +173,36 @@
                                       mapOptions);
    
   }
+   
+  google.maps.event.addDomListener(window, 'load', initMap);
+</script>
+<script>
+  var map2 = null;
+
+  function initMap() {
+    var mapOptions = {
+      center: new google.maps.LatLng(-7.804206, 110.364442),
+      zoom: 10,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map2 = new google.maps.Map(document.getElementById("map-canvas"),
+                                      mapOptions);
+   
+  }
 
   function showlocation() {
      // One-shot position request.
       navigator.geolocation.getCurrentPosition(callback);
   }
   
+  function loadMap(){
+    $("#map-canvas").html("");
+    $("#map-canvas").css("height","500");
+    google.maps.event.addDomListener(window, 'load', initMap);
+  }
+
   function callback(position) {
+    loadMap();
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
          
@@ -190,14 +213,14 @@
         title: "Lokasi Anda Sekarang.."
     });     
      
-    marker.setMap(map);
-    map.setZoom(15);
-    map.setCenter(marker.getPosition());
-
+    marker.setMap(map2);
+    map2.setZoom(15);
+    map2.setCenter(marker.getPosition());
   }
    
-  google.maps.event.addDomListener(window, 'load', initMap);
+  //google.maps.event.addDomListener(window, 'load', initMap);
 </script>
+
   </head>
   <body>
 <div class="page-container">

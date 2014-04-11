@@ -1,0 +1,437 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"load",
+				"loadMap"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"_",
+				"_POST"
+			],
+			[
+				"mysqlfe",
+				"mysql_fetch_array"
+			],
+			[
+				"query",
+				"query_blank"
+			],
+			[
+				"judul",
+				"judul"
+			],
+			[
+				"hea",
+				"header	<header>"
+			],
+			[
+				"quer",
+				"query_login"
+			],
+			[
+				"md",
+				"md5pwd"
+			],
+			[
+				"padi",
+				"padding-top"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"biota",
+				"biotaGua"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"open",
+				"openpergua"
+			],
+			[
+				"map",
+				"map-canvas"
+			],
+			[
+				"drop",
+				"dropdown-menu"
+			],
+			[
+				"json",
+				"json2html"
+			],
+			[
+				"ti",
+				"title	<title>"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"doc",
+				"document"
+			],
+			[
+				"http",
+				"http_request"
+			],
+			[
+				"api",
+				"apiToken"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "test.html",
+			"settings":
+			{
+				"buffer_size": 12086,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"come",
+				"Toggle Comment"
+			],
+			[
+				"lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"com",
+				"Toggle Comment"
+			],
+			[
+				"<p",
+				"Snippet: <p>"
+			],
+			[
+				"lore",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"html",
+				"Snippet: Simple HTML5 Boilerplate"
+			],
+			[
+				"htm",
+				"Set Syntax: HTML5"
+			],
+			[
+				"comme",
+				"Toggle Comment"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"jqu",
+				"Snippet: Google AJAX Libraries: jQuery"
+			],
+			[
+				"aja",
+				"Snippet: Google AJAX Libraries: jQuery"
+			],
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"package c",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/G/djenggot/github/djeng-gua/index.html",
+		"/C/xampp/htdocs/tanimuda/article/video.php",
+		"/C/xampp/htdocs/tanimuda/article/index.php",
+		"/C/xampp/htdocs/tanimuda/article/article.php",
+		"/C/xampp/htdocs/tanimuda/admin/conn.php",
+		"/C/xampp/htdocs/tanimuda/index.php",
+		"/C/xampp/htdocs/tanimuda/test.html",
+		"/C/xampp/htdocs/tanimuda/admin/header.php",
+		"/C/xampp/htdocs/tanimuda/admin/addvideo.php",
+		"/C/xampp/htdocs/tanimuda/admin/listvideo.php",
+		"/C/xampp/htdocs/tanimuda/admin/json_video.php",
+		"/C/xampp/htdocs/tanimuda/admin/artikel.php",
+		"/C/xampp/htdocs/tanimuda/admin/kategori.php",
+		"/C/xampp/htdocs/tanimuda/admin/upload.php",
+		"/C/xampp/htdocs/tanimuda/admin/action_video.php",
+		"/C/xampp/htdocs/tanimuda/admin/edit_listvideo.php",
+		"/C/xampp/htdocs/tanimuda/admin/action_kategori.php",
+		"/C/xampp/htdocs/tanimuda/admin/index.php",
+		"/C/xampp/htdocs/tanimuda/admin/footer.php",
+		"/C/xampp/htdocs/tanimuda/admin/login.php",
+		"/C/xampp/htdocs/tanimuda/admin/logout.php",
+		"/C/xampp/htdocs/tanimuda/css/signin.css",
+		"/C/xampp/htdocs/tanimuda/css/article.css",
+		"/C/xampp/htdocs/tanimuda/css/demo2.css",
+		"/C/xampp/htdocs/tanimuda/css/demo.css",
+		"/G/djenggot/frontWeb/css/navbar-fixed-top.css",
+		"/C/Users/Gadga/Downloads/Compressed/jquery.json2html-master/test/test_all.html",
+		"/G/djenggot/gua/css/component.css",
+		"/G/djenggot/gua/css/jumbotron.css",
+		"/G/djenggot/gua/css/backup-jumbotron.css",
+		"/G/djenggot/gua/css/bootstrap-theme.css",
+		"/G/djenggot/SlidePushMenus/SlidePushMenus/index.html",
+		"/G/djenggot/gua/test2.html",
+		"/G/djenggot/gua/css/jquery.mobile.theme-1.4.2.css",
+		"/G/djenggot/gua/test.html",
+		"/G/djenggot/gua/js/jquery.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"?>,",
+			"..\"\n",
+			"navbar-right",
+			"navbar-to",
+			"navbar-hea",
+			"navbar",
+			"li",
+			"sidebar"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "test.html",
+					"settings":
+					{
+						"buffer_size": 12086,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8442,
+								8442
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 855.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 184.0,
+	"status_bar_visible": true
+}
