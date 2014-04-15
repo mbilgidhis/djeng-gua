@@ -1,0 +1,88 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+  padding-top: 51px;  
+  font-family: 'Roboto', sans-serif;
+}
+.text-center {
+  padding-top: 20px;
+}
+.col-xs-12 {
+  background-color: #fff;
+}
+#sidebar {
+  height: 100%;
+  padding-right: 0;
+  padding-top: 20px;
+}
+#sidebar .nav {
+  width: 95%;
+}
+#sidebar li {
+  border:0 #f2f2f2 solid;
+  border-bottom-width:1px;
+}
+
+#sidebar .hover{
+  background-color: #838169;
+}
+
+/* collapsed sidebar styles */
+@media screen and (max-width: 1367px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.50s ease-out;
+    -moz-transition: all 0.50s ease-out;
+    transition: all 0.50s ease-out;
+  }
+ 
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -60%;
+  }
+ 
+  .row-offcanvas-left.active {
+    left: 60%;
+  }
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 60%;
+  }
+}
+
+.wrap {
+    position: relative;
+}
+
+glyph {
+    position: relative;
+    top: -1px;
+    left: -20px;
+    display: inline;
+    padding: 8px 4px;
+    padding-top: 9px; /* fixes border alignment */
+    font-size: .85em;
+    margin: -10px;
+    border-left: 0;
+    cursor: pointer;
+    color:#a5a5a5;
+}
+glyph:hover {
+    color: #b6b6b6;
+}
+glyph:active {
+    .boxshadow(inset 0 0 3px rgba(0,0,0,.15));
+}
+
+span{
+  cursor: pointer;
+}
+
+.navbar-toggle {
+  margin-top: -8px;
+}
+
+.navbar-center{
+  float: center;
+}

@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/jumbotron.css">
    <style type="text/css">
       #map-canvas {
-        height: 500px;
+        min-height: 500px;
       }
     </style>
 
@@ -26,8 +26,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/json2html.js"></script>
-    <script type="text/javascript" src="js/jquery.json2html.js"></script>
 
     <script type="text/javascript">
         var jason = $.ajax({
@@ -73,10 +71,10 @@
             type: "post",
           }).done(function(area){
               $('#map-canvas').removeAttr('style');
-              $('#map-canvas').html("<div class='media' id='area'>");
+              $('#map-canvas').html("<div id='area' style='padding-top:20px;'>");
               $.each(area.data, function(a, gua){
                if(id == gua.provinsi.id){
-                $("#area").append('<a class="pull-left" href="javascript:openpergua(\''+gua.id+'\')"><img class="media-object" src="images/item.png" alt="item" width="100px"></a><div class="media-body"><h4 class="media-heading"><a href="javascript:openpergua(\''+gua.id+'\')">'+gua.name+'</a></h4><p>'+gua.description.substr(0,550)+'...</p></div><hr>');
+                $("#area").append('<div class="media"><a class="pull-left" href="javascript:openpergua(\''+gua.id+'\')"><img class="media-object" src="images/item.png" alt="item" width="100px"></a><div class="media-body"><h4 class="media-heading"><a href="javascript:openpergua(\''+gua.id+'\')">'+gua.name+'</a></h4><p>'+gua.description.substr(0,300)+'...</p></div></div><hr>');
                }
               });
           });
@@ -105,7 +103,7 @@
             type: "post",             
           }).done(function(goa){
               $('#map-canvas').removeAttr('style');
-              $("#map-canvas").html("<div id='pergoa'>");
+              $("#map-canvas").html("<div id='pergoa' style='padding-top:20px;'>");
               $.each(goa.data, function(b, g){
                 if(id == g.id){
                 
@@ -247,7 +245,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <div class="container">
         <div class="row row-offcanvas row-offcanvas-left">
             <!-- sidebar -->
-            <div class="col-xs-6 col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
+            <div class="col-xs-6 col-sm-6 col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav nav-stacked">
                   <li><a href="index.html">Home</a></li>
                   <li class="dropdown">
@@ -265,28 +263,28 @@ google.maps.event.addDomListener(window, 'load', initialize);
                   <li><a href="#">About Gadga</a></li>
                   </ul>
 
-<!-- Modal -->
-<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Login</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Login</h4>
+                          </div>
+                          <div class="modal-body">
+                            ...
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
             </div>
             <!-- main area -->
-            <div class="col-xs-12 col-md-9" id="map-canvas"></div>
+            <div class="col-xs-12 col-sm-12 col-md-9" id="map-canvas"></div>
             <!-- /.col-xs-12 main -->
         </div>
         <!--/.row-->
