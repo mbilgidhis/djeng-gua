@@ -36,16 +36,8 @@
           dataType: "json",
           type: "post",
         }).done(function(gua){
-          var larea = "";
           $.each( gua.data, function( i, val ) {
-            if(val.provinsi.id != larea){
-              if(val.provinsi.name){
-                $('#ddarea').append("<li><a href='javascript:open("+val.provinsi.id+")'>"+val.provinsi.name+"</a></li>");
-              }else{
-                $('#ddarea').append("<li><a href='javascript:open("+val.provinsi.id+")'>Others</a></li>");
-              }
-               larea = val.provinsi.id;
-            }
+              $('#ddarea').append("<li><a href='javascript:opengua("+val.provinsi.id+")'>"+val.provinsi.name+"</a></li>");
             });
           $('#info').append('<li><a href="javascript:tentangGua()">Tentang Gua</a></li><li><a href="javascript:jenisGua()">Jenis Gua</a></li><li><a href="javascript:alatSusur()">Peralatan Susur Gua</a></li><li><a href="javascript:sulit()">Tingkat Kesulitan Gua</a></li><li><a href="javascript:biota()">Biota Gua</a></li><li><a href="#">Ornamen Gua</a></li>');
         });
@@ -65,7 +57,7 @@
           });
         }
 
-        function open(id){
+        function opengua(id){
           var listArea = $.ajax({
             url:"http://gua.antonwibisono.com/api/public/caves/",
             apiToken: "434refce",
@@ -76,7 +68,7 @@
               $('#map-canvas').html("<div class='media' id='area'>");
               $.each(area.data, function(a, gua){
                if(id == gua.provinsi.id){
-                $("#area").append('<a class="pull-left" href="javascript:openpergua(\''+gua.id+'\')"><img class="media-object" src="images/item.png" alt="item" width="100px"></a><div class="media-body"><h4 class="media-heading"><a href="javascript:openpergua(\''+gua.id+'\')">'+gua.name+'</a></h4><p>'+gua.description.substr(0,550)+'...</p></div><hr>');
+                $("#area").append('<a class="pull-left" href="javascript:openpergua(\''+gua.id+'\')"><img class="media-object" src="images/item.png" alt="item" width="100px"></a><div class="media-body"><h4 class="media-heading"><a href="#">'+gua.name+'</a></h4><p>'+gua.description.substr(0,550)+'...</p></div><hr>');
                }
               });
           });
@@ -167,58 +159,45 @@
 });
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDla0vsr6AO7fhgej9-5gADFw7bMPH-oS8&sensor=true"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDla0vsr6AO7fhgej9-5gADFw7bMPH-oS8&sensor=false"></script>
 <script type="text/javascript">
-function initialize() {
-  var mapOptions = {
-    zoom: 15
-  };
-  map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
+  var map = null;
 
-  // Try HTML5 geolocation
-  if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = new google.maps.LatLng(position.coords.latitude,
-                                       position.coords.longitude);
-
-      var infowindow = new google.maps.InfoWindow({
-        map: map,
-        position: pos,
-        content: 'Lokasi Anda sekarang.'
-      });
-
-      map.setCenter(pos);
-    }, function() {
-      handleNoGeolocation(true);
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleNoGeolocation(false);
-  }
-}
-
-function handleNoGeolocation(errorFlag) {
-  if (errorFlag) {
-    var content = 'Error: The Geolocation service failed.';
-  } else {
-    var content = 'Error: Your browser doesn\'t support geolocation.';
+  function initMap() {
+    var mapOptions = {
+      center: new google.maps.LatLng(-7.804206, 110.364442),
+      zoom: 10,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById("map-canvas"),
+                                      mapOptions);
+   
   }
 
-  var options = {
-    map: map,
-    position: new google.maps.LatLng(60, 105),
-    content: content
-  };
+  function showlocation() {
+     // One-shot position request
+      navigator.geolocation.getCurrentPosition(callback);
+  }
+  
+  function callback(position) {
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+         
+    var latLong = new google.maps.LatLng(lat, lon);
+     
+    var marker = new google.maps.Marker({
+        position: latLong,
+        title: "Lokasi Anda Sekarang.."
+    });     
+     
+    marker.setMap(map);
+    map.setZoom(15);
+    map.setCenter(marker.getPosition());
 
-  var infowindow = new google.maps.InfoWindow(options);
-  map.setCenter(options.position);
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
+  }
+   
+  google.maps.event.addDomListener(window, 'load', initMap);
 </script>
-
   </head>
   <body>
 <div class="page-container">
@@ -238,7 +217,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
                 <form class="navbar-form navbar-right visible-sm visible-xs visible-md" role="form">
                   <div class="form-group">
                     <input type="text" placeholder="Search" class="form-control">
-                    <glyph> <span class="glyphicon glyphicon-search"></span></glyph> <a href="test.html"><span class="glyphicon glyphicon-screenshot"></span></a>
+                    <glyph> <span class="glyphicon glyphicon-search"></span></glyph> <span class="glyphicon glyphicon-screenshot" onclick="showlocation()"></span>
                   </div>
                 </form>
               </div>

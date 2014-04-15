@@ -161,64 +161,54 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDla0vsr6AO7fhgej9-5gADFw7bMPH-oS8&sensor=false"></script>
 <script type="text/javascript">
-  var map = null;
+function initialize() {
+  var mapOptions = {
+    zoom: 15
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
 
-  function initMap() {
-    var mapOptions = {
-      center: new google.maps.LatLng(-7.804206, 110.364442),
-      zoom: 10,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    map = new google.maps.Map(document.getElementById("map-canvas"),
-                                      mapOptions);
-   
-  }
-   
-  google.maps.event.addDomListener(window, 'load', initMap);
-</script>
-<script>
-  var map2 = null;
+  // Try HTML5 geolocation
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = new google.maps.LatLng(position.coords.latitude,
+                                       position.coords.longitude);
 
-  function initMap() {
-    var mapOptions = {
-      center: new google.maps.LatLng(-7.804206, 110.364442),
-      zoom: 10,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    map2 = new google.maps.Map(document.getElementById("map-canvas"),
-                                      mapOptions);
-   
-  }
+      var infowindow = new google.maps.InfoWindow({
+        map: map,
+        position: pos,
+        content: 'Lokasi Anda sekarang.'
+      });
 
-  function showlocation() {
-     // One-shot position request.
-      navigator.geolocation.getCurrentPosition(callback);
+      map.setCenter(pos);
+    }, function() {
+      handleNoGeolocation(true);
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleNoGeolocation(false);
   }
-  
-  function loadMap(){
-    $("#map-canvas").html("");
-    $("#map-canvas").css("height","500");
-    google.maps.event.addDomListener(window, 'load', initMap);
+}
+
+function handleNoGeolocation(errorFlag) {
+  if (errorFlag) {
+    var content = 'Error: The Geolocation service failed.';
+  } else {
+    var content = 'Error: Your browser doesn\'t support geolocation.';
   }
 
-  function callback(position) {
-    loadMap();
-    var lat = position.coords.latitude;
-    var lon = position.coords.longitude;
-         
-    var latLong = new google.maps.LatLng(lat, lon);
-     
-    var marker = new google.maps.Marker({
-        position: latLong,
-        title: "Lokasi Anda Sekarang.."
-    });     
-     
-    marker.setMap(map2);
-    map2.setZoom(15);
-    map2.setCenter(marker.getPosition());
-  }
-   
-  //google.maps.event.addDomListener(window, 'load', initMap);
+  var options = {
+    map: map,
+    position: new google.maps.LatLng(60, 105),
+    content: content
+  };
+
+  var infowindow = new google.maps.InfoWindow(options);
+  map.setCenter(options.position);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
 </script>
 
   </head>
@@ -240,7 +230,7 @@
                 <form class="navbar-form navbar-right visible-sm visible-xs visible-md" role="form">
                   <div class="form-group">
                     <input type="text" placeholder="Search" class="form-control">
-                    <glyph> <span class="glyphicon glyphicon-search"></span></glyph> <span class="glyphicon glyphicon-screenshot" onclick="showlocation()"></span>
+                    <glyph> <span class="glyphicon glyphicon-search"></span></glyph> <a href="test.html"><span class="glyphicon glyphicon-screenshot"></span></a>
                   </div>
                 </form>
               </div>
@@ -251,7 +241,7 @@
             <!-- sidebar -->
             <div class="col-xs-6 col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav nav-stacked">
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="test.html">Home</a></li>
                   <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                       Area<span class="caret"></span></a>
