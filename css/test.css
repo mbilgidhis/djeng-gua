@@ -2,6 +2,8 @@
 
 body {
   padding-top: 51px;  
+  padding-left: 20px;
+  padding-right: 20px;
   font-family: 'Roboto', sans-serif;
 }
 .text-center {
@@ -38,16 +40,16 @@ body {
  
   .row-offcanvas-left
   .sidebar-offcanvas {
-    left: -60%;
+    left: -50%;
   }
  
   .row-offcanvas-left.active {
-    left: 60%;
+    left: 50%;
   }
   .sidebar-offcanvas {
     position: absolute;
     top: 0;
-    width: 60%;
+    width: 50%;
   }
 }
 

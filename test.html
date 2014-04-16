@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/test.css">
    <style type="text/css">
       #map-canvas {
-        min-height: 500px;
+        min-height: 400px;
       }
     </style>
 
@@ -110,7 +110,22 @@
                   $("#pergoa").append("<div class='jumbotron'><img class='media-object' src='images/item.png' alt='item' width='100px'></div>");
                   $("#pergoa").append("<h3>"+g.name+"</h3>");
                   $.each(g.coordinates, function(c, h){
-                    $("#pergoa").append("<div class='row'><div class='col-md-6 col-sm-6'><h4>Tingkat Kesulitan "+g.difficulty.name+"</h4><h5>"+g.type.name+"</h5></div><div class='col-md-6 col-sm-6'><p>S"+h.latitude+" E"+h.longitude+"</p><p>"+g.kelurahan.name+", "+g.kecamatan.name+", "+g.kabupaten.name+"</p></div></div>");
+                    if(g.kelurahan.name){
+                      var kelurahan = g.kelurahan.name;
+                    }else{
+                      var kelurahan = "-";
+                    }
+                    if(g.kecamatan.name){
+                      var kecamatan = g.kecamatan.name;
+                    }else{
+                      var kecamatan = "-";
+                    }
+                    if(g.kabupaten.name){
+                      var kabupaten = g.kabupaten.name;
+                    }else{
+                      var kabupaten = "-";
+                    }
+                    $("#pergoa").append("<div class='row'><div class='col-md-6 col-sm-6'><h4>Tingkat Kesulitan "+g.difficulty.name+"</h4><h5>"+g.type.name+"</h5></div><div class='col-md-6 col-sm-6'><p>S"+h.latitude+" E"+h.longitude+"</p><p>"+kelurahan+", "+kecamatan+", "+kabupaten+"</p></div></div>");
                     });
                   $("#pergoa").append("<p>"+g.description+"</p><hr>");
                 
@@ -256,39 +271,35 @@ google.maps.event.addDomListener(window, 'load', initialize);
             </div>
           </div>
   </div>
-<div class="container">
+
     <!-- top navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">
-                <button class="navbar-toggle visible-lg visible-md visible-sm visible-xs" type="button" data-toggle="offcanvas" data-target=".sidebar-nav"> 
-                   <span class="icon-bar"></span>
-                   <span class="icon-bar"></span>
-                   <span class="icon-bar"></span>
-                </button>
-              </a> 
-            </div>
-            <div class="navbar-collapse collapse">
-                <form class="navbar-form navbar-right visible-sm visible-xs visible-md" role="form">
-                  <div class="form-group">
-                    <input type="text" placeholder="Search" class="form-control">
-                    <glyph> <span class="glyphicon glyphicon-search"></span></glyph> <a href="test.html"><span class="glyphicon glyphicon-screenshot"></span></a>
-                  </div>
-                </form>
-            </div>
-            </div>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <button class="navbar-toggle visible-lg visible-md visible-sm visible-xs" type="button" data-toggle="offcanvas" data-target=".sidebar-nav"> 
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </button>
+          </a> 
+        </div>
+        <div class="navbar-collapse collapse">
+            <form class="navbar-form" role="form">
+              <div class="form-group">
+                <input type="text" placeholder="Search" class="form-control">
+                <glyph> <span class="glyphicon glyphicon-search"></span></glyph> <a href="test.html"><span class="glyphicon glyphicon-screenshot"></span></a>
+              </div>
+            </form>
         </div>
     </div>
-    <div class="container">
+   
         <div class="row row-offcanvas row-offcanvas-left">
             <!-- main area -->
             <div class="col-xs-12 col-sm-12 col-md-12" id="map-canvas"></div>
             <!-- /.col-xs-12 main -->
         </div>
         <!--/.row-->
-    </div>
-    <!--/.container-->
+
 </div>
 <!--/.page-container-->
   </body>
