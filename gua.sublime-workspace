@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"fot",
+				"font-size"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"colo",
+				"background-color"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
 				"load",
 				"loadMap"
 			],
@@ -44,16 +80,8 @@
 				"padding-top"
 			],
 			[
-				"font",
-				"font-weight"
-			],
-			[
 				"fo",
 				"font-size"
-			],
-			[
-				"pad",
-				"padding-bottom"
 			],
 			[
 				"bac",
@@ -116,18 +144,27 @@
 	"buffers":
 	[
 		{
-			"file": "css/test.css",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1373,
+				"buffer_size": 12675,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "test.html",
+			"file": "js/example.js",
 			"settings":
 			{
-				"buffer_size": 12075,
+				"buffer_size": 1247,
+				"line_ending": "Windows",
+				"name": "$(document).ready(function() {"
+			}
+		},
+		{
+			"file": "css/test.css",
+			"settings":
+			{
+				"buffer_size": 1418,
 				"line_ending": "Windows"
 			}
 		}
@@ -139,6 +176,18 @@
 		"selected_items":
 		[
 			[
+				"com",
+				"Toggle Comment"
+			],
+			[
+				"html",
+				"Snippet: Simple HTML5 Boilerplate"
+			],
+			[
+				"htm",
+				"Snippet: Simple HTML5 Boilerplate"
+			],
+			[
 				"come",
 				"Toggle Comment"
 			],
@@ -147,24 +196,12 @@
 				"Snippet: Lorem ipsum"
 			],
 			[
-				"com",
-				"Toggle Comment"
-			],
-			[
 				"<p",
 				"Snippet: <p>"
 			],
 			[
 				"lore",
 				"Snippet: Lorem ipsum"
-			],
-			[
-				"html",
-				"Snippet: Simple HTML5 Boilerplate"
-			],
-			[
-				"htm",
-				"Set Syntax: HTML5"
 			],
 			[
 				"comme",
@@ -211,7 +248,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 464.0
+		"width": 512.0
 	},
 	"console":
 	{
@@ -228,10 +265,17 @@
 	},
 	"file_history":
 	[
+		"/G/djenggot/github/djeng-gua/test.html",
+		"/G/djenggot/github/djeng-gua/js/handlebars.js",
+		"/G/djenggot/github/djeng-gua/js/jquery-1.10.2.min.js",
+		"/G/djenggot/github/djeng-gua/js/jquery-1.0.2.js",
+		"/G/djenggot/frontWeb/personal web/index.html",
+		"/G/djenggot/github/djeng-gua/css/test.css",
+		"/G/djenggot/less/jenggot.less",
+		"/G/djenggot/frontWeb/personal web/index.php",
 		"/G/djenggot/github/djeng-gua/index.html",
 		"/G/djenggot/github/djeng-gua/css/jumbotron.css",
 		"/G/djenggot/github/djeng-gua/and.html",
-		"/G/djenggot/github/djeng-gua/test.html",
 		"/C/xampp/htdocs/tanimuda/article/video.php",
 		"/C/xampp/htdocs/tanimuda/article/index.php",
 		"/C/xampp/htdocs/tanimuda/article/article.php",
@@ -309,95 +353,23 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "css/test.css",
+					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 1373,
+						"buffer_size": 12675,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								785,
-								783
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test.html",
-					"settings":
-					{
-						"buffer_size": 12075,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								10865,
-								10865
+								11955,
+								11828
 							]
 						],
 						"settings":
@@ -451,7 +423,152 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3839.0,
+						"translation.y": 3465.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/example.js",
+					"settings":
+					{
+						"buffer_size": 1247,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1202,
+								1202
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_name": "$(document).ready(function() {",
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "css/test.css",
+					"settings":
+					{
+						"buffer_size": 1418,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1016,
+								1016
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 630.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

@@ -59,7 +59,7 @@ body {
 
 glyph {
     position: relative;
-    top: -1px;
+    top: 5px;
     left: -20px;
     display: inline;
     padding: 8px 4px;

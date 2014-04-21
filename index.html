@@ -9,10 +9,10 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/jumbotron.css">
+    <link rel="stylesheet" type="text/css" href="css/test.css">
    <style type="text/css">
       #map-canvas {
-        min-height: 500px;
+        min-height: 400px;
       }
     </style>
 
@@ -26,6 +26,9 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/typeahead.bundle.js"></script>
+    <script src="js/example.js"></script>
 
     <script type="text/javascript">
         var jason = $.ajax({
@@ -106,11 +109,26 @@
               $("#map-canvas").html("<div id='pergoa' style='padding-top:20px;'>");
               $.each(goa.data, function(b, g){
                 if(id == g.id){
-                
+                  
                   $("#pergoa").append("<div class='jumbotron'><img class='media-object' src='images/item.png' alt='item' width='100px'></div>");
                   $("#pergoa").append("<h3>"+g.name+"</h3>");
                   $.each(g.coordinates, function(c, h){
-                    $("#pergoa").append("<div class='row'><div class='col-md-6 col-sm-6'><h4>Tingkat Kesulitan "+g.difficulty.name+"</h4><h5>"+g.type.name+"</h5></div><div class='col-md-6 col-sm-6'><p>S"+h.latitude+" E"+h.longitude+"</p><p>"+g.kelurahan.name+", "+g.kecamatan.name+", "+g.kabupaten.name+"</p></div></div>");
+                    if(g.kelurahan.name){
+                      var kelurahan = g.kelurahan.name;
+                    }else{
+                      var kelurahan = "-";
+                    }
+                    if(g.kecamatan.name){
+                      var kecamatan = g.kecamatan.name;
+                    }else{
+                      var kecamatan = "-";
+                    }
+                    if(g.kabupaten.name){
+                      var kabupaten = g.kabupaten.name;
+                    }else{
+                      var kabupaten = "-";
+                    }
+                    $("#pergoa").append("<div class='row'><div class='col-md-6 col-sm-6'><h4>Tingkat Kesulitan "+g.difficulty.name+"</h4><h5>"+g.type.name+"</h5></div><div class='col-md-6 col-sm-6'><p>S"+h.latitude+" E"+h.longitude+"</p><p>"+kelurahan+", "+kecamatan+", "+kabupaten+"</p></div></div>");
                     });
                   $("#pergoa").append("<p>"+g.description+"</p><hr>");
                 
@@ -219,77 +237,76 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
   </head>
   <body>
-<div class="page-container">
+  <div class="sidebar-offcanvas" id="sidebar" role="navigation" style="position:fixed; padding-top:60px">
+      <ul class="nav nav-stacked">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            Area<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" id="ddarea">
+            </ul>
+        </li>
+        <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            Info Susur Gua<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" id="info">
+            </ul>
+        </li>
+        <li data-toggle="modal" data-target="#login"><a href="#">Sign In</a></li>
+        <li><a href="#">About Gadga</a></li>
+        </ul>
+
+          <!-- Modal -->
+          <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel">Login</h4>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+  </div>
+
     <!-- top navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">
-                <button class="navbar-toggle visible-sm visible-xs" type="button" data-toggle="offcanvas" data-target=".sidebar-nav"> 
-                   <span class="icon-bar"></span>
-                   <span class="icon-bar"></span>
-                   <span class="icon-bar"></span>
-                </button>
-              </a> 
-            </div>
-            <div class="navbar-collapse collapse">
-                <form class="navbar-form navbar-right visible-sm visible-xs visible-md" role="form">
-                  <div class="form-group">
-                    <input type="text" placeholder="Search" class="form-control">
-                    <glyph> <span class="glyphicon glyphicon-search"></span></glyph> <a href="test.html"><span class="glyphicon glyphicon-screenshot"></span></a>
-                  </div>
-                </form>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <button class="navbar-toggle visible-lg visible-md visible-sm visible-xs" type="button" data-toggle="offcanvas" data-target=".sidebar-nav"> 
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </button>
+          </a> 
+        </div>
+        <div class="navbar-collapse collapse">
+<!--           <div id="the-basics">
+            <input class="typeahead" type="text" placeholder="States of USA">
+          </div>
+ -->
+            <form class="navbar-form" role="form">
+              <div class="form-group" id="the-basics">
+                <input type="text" placeholder="Search" class="form-control typeahead">
+                <glyph> <span class="glyphicon glyphicon-search"></span></glyph> <a href="test.html"><span class="glyphicon glyphicon-screenshot"></span></a>
               </div>
+            </form>
         </div>
     </div>
-    <div class="container">
+   
         <div class="row row-offcanvas row-offcanvas-left">
-            <!-- sidebar -->
-            <div class="col-xs-6 col-sm-6 col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
-                <ul class="nav nav-stacked">
-                  <li><a href="index.html">Home</a></li>
-                  <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                      Area<span class="caret"></span></a>
-                      <ul class="dropdown-menu dropdown-menu-right" id="ddarea">
-                      </ul>
-                  </li>
-                  <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                      Info Susur Gua<span class="caret"></span></a>
-                      <ul class="dropdown-menu dropdown-menu-right" id="info">
-                      </ul>
-                  </li>
-                  <li data-toggle="modal" data-target="#login"><a href="#">Sign In</a></li>
-                  <li><a href="#">About Gadga</a></li>
-                  </ul>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">Login</h4>
-                          </div>
-                          <div class="modal-body">
-                            ...
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-            </div>
             <!-- main area -->
-            <div class="col-xs-12 col-sm-12 col-md-9" id="map-canvas"></div>
+            <div class="col-xs-12 col-sm-12 col-md-12" id="map-canvas"></div>
             <!-- /.col-xs-12 main -->
         </div>
         <!--/.row-->
-    </div>
-    <!--/.container-->
+
 </div>
 <!--/.page-container-->
   </body>
