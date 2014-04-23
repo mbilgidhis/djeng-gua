@@ -31,6 +31,7 @@
     <script src="js/example.js"></script>
 
     <script type="text/javascript">
+    //fungsi untuk menampilkan dropdown area
         var jason = $.ajax({
           url:"http://gua.antonwibisono.com/api/public/caves/",
           apiToken: "434refce",
@@ -51,6 +52,7 @@
           $('#info').append('<li><a href="javascript:tentangGua()">Tentang Gua</a></li><li><a href="javascript:jenisGua()">Jenis Gua</a></li><li><a href="javascript:alatSusur()">Peralatan Susur Gua</a></li><li><a href="javascript:sulit()">Tingkat Kesulitan Gua</a></li><li><a href="javascript:biota()">Biota Gua</a></li><li><a href="#">Ornamen Gua</a></li>');
         });
 
+        //fungsi untuk menampilkan halaman biota
         function biota(){
           var biota = $.ajax({
             url:"http://gua.antonwibisono.com/api/public/getbiotatype/",
@@ -66,6 +68,7 @@
           });
         }
 
+        //fungsi untuk menampilkan list gua dari list per provinsi
         function open(id){
           var listArea = $.ajax({
             url:"http://gua.antonwibisono.com/api/public/caves/",
@@ -83,6 +86,7 @@
           });
         }
 
+        //fungsi untuk menampilkan tingkat kesulitan gua
         function sulit(){
           var tsulit = $.ajax({
             url:"http://gua.antonwibisono.com/api/public/getdificultytype/",
@@ -98,6 +102,46 @@
           });
         }
 
+        //fungsi untuk menampilkan data gua dari field Search
+        function opengua(){
+          var bukaGua = $("#namagua").val();
+          $.ajax({
+            url:"http://gua.antonwibisono.com/api/public/cavesdetails/",
+            apiToken: "434refce",
+            dataType: "json",
+            type: "post",            
+          }).done(function(a){
+            $('#map-canvas').removeAttr('style');
+            $('#map-canvas').html("<div id='ogua' style='padding-top:20px;'>");
+            $.each(a.data, function(b,g){
+              if(bukaGua == g.name){
+                  $("#ogua").append("<div class='jumbotron'><img class='media-object' src='images/item.png' alt='item' width='100px'></div>");
+                  $("#ogua").append("<h3>"+g.name+"</h3>");
+                  $.each(g.coordinates, function(c, h){
+                    if(g.kelurahan.name){
+                      var kelurahan = g.kelurahan.name;
+                    }else{
+                      var kelurahan = "-";
+                    }
+                    if(g.kecamatan.name){
+                      var kecamatan = g.kecamatan.name;
+                    }else{
+                      var kecamatan = "-";
+                    }
+                    if(g.kabupaten.name){
+                      var kabupaten = g.kabupaten.name;
+                    }else{
+                      var kabupaten = "-";
+                    }
+                    $("#ogua").append("<div class='row'><div class='col-md-6 col-sm-6'><h4>Tingkat Kesulitan "+g.difficulty.name+"</h4><h5>"+g.type.name+"</h5></div><div class='col-md-6 col-sm-6'><p>S"+h.latitude+" E"+h.longitude+"</p><p>"+kelurahan+", "+kecamatan+", "+kabupaten+"</p></div></div>");
+                    });
+                  $("#ogua").append("<p>"+g.description+"</p><hr>");                
+              }
+            });
+          });
+        }
+
+        //fungsi untuk menampilkan data gua lengkap dari list gua
         function openpergua(id){
           var pergua = $.ajax({
             url:"http://gua.antonwibisono.com/api/public/cavesdetails/",
@@ -138,6 +182,7 @@
           });
         }
 
+        //fungsi untuk menampilkan jenis-jenis gua
         function jenisGua(){
           var jGua = $.ajax({
             url:"http://gua.antonwibisono.com/api/public/getcavetype/",
@@ -153,6 +198,7 @@
           });
         }
 
+        //fungsi untuk menampilkan alat susur
         function alatSusur(){
           var alSur = $.ajax({
             url:"http://gua.antonwibisono.com/api/public/getgearstype/",
@@ -168,6 +214,7 @@
           });
         }
 
+        //fungsi untuk menampilkan halaman tentang gua
         function tentangGua(){
           $("#map-canvas").removeAttr("style");
           $("#map-canvas").html("<div id='tentang_gua'>")
@@ -182,7 +229,7 @@
   });
 });
 </script>
-
+<!-- fungsi menampilkan map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDla0vsr6AO7fhgej9-5gADFw7bMPH-oS8&sensor=true"></script>
 <script type="text/javascript">
 function initialize() {
@@ -293,8 +340,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
  -->
             <form class="navbar-form" role="form">
               <div class="form-group" id="the-basics">
-                <input type="text" placeholder="Search" class="form-control typeahead">
-                <glyph> <span class="glyphicon glyphicon-search"></span></glyph> <a href="test.html"><span class="glyphicon glyphicon-screenshot"></span></a>
+                <input type="text" placeholder="Search" class="form-control typeahead" id="namagua">
+                <glyph><span class="glyphicon glyphicon-search" onclick="javascript:opengua()"></span></glyph> <a href="index.html"><span class="glyphicon glyphicon-screenshot"></span></a>
               </div>
             </form>
         </div>

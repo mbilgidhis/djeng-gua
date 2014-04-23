@@ -147,7 +147,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 12675,
+				"buffer_size": 15051,
 				"line_ending": "Windows"
 			}
 		},
@@ -155,17 +155,9 @@
 			"file": "js/example.js",
 			"settings":
 			{
-				"buffer_size": 1247,
+				"buffer_size": 1205,
 				"line_ending": "Windows",
 				"name": "$(document).ready(function() {"
-			}
-		},
-		{
-			"file": "css/test.css",
-			"settings":
-			{
-				"buffer_size": 1418,
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -265,12 +257,12 @@
 	},
 	"file_history":
 	[
+		"/G/djenggot/github/djeng-gua/css/test.css",
 		"/G/djenggot/github/djeng-gua/test.html",
 		"/G/djenggot/github/djeng-gua/js/handlebars.js",
 		"/G/djenggot/github/djeng-gua/js/jquery-1.10.2.min.js",
 		"/G/djenggot/github/djeng-gua/js/jquery-1.0.2.js",
 		"/G/djenggot/frontWeb/personal web/index.html",
-		"/G/djenggot/github/djeng-gua/css/test.css",
 		"/G/djenggot/less/jenggot.less",
 		"/G/djenggot/frontWeb/personal web/index.php",
 		"/G/djenggot/github/djeng-gua/index.html",
@@ -353,7 +345,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -361,15 +353,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 12675,
+						"buffer_size": 15051,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11955,
-								11828
+								10507,
+								10507
 							]
 						],
 						"settings":
@@ -423,7 +415,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3465.0,
+						"translation.y": 2160.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -433,15 +425,15 @@
 					"file": "js/example.js",
 					"settings":
 					{
-						"buffer_size": 1247,
+						"buffer_size": 1205,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1202,
-								1202
+								1019,
+								1019
 							]
 						],
 						"settings":
@@ -496,79 +488,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 225.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "css/test.css",
-					"settings":
-					{
-						"buffer_size": 1418,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1016,
-								1016
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 630.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

@@ -19,7 +19,7 @@ var substringMatcher = function(strs) {
       if (substrRegex.test(str)) {
         // the typeahead jQuery plugin expects suggestions to a
         // JavaScript object, refer to typeahead docs for more info
-        matches.push({ value: str });
+        matches.push({ value:  str });
       }
     });
 
@@ -27,17 +27,15 @@ var substringMatcher = function(strs) {
   };
 };
 
-var states = new Array();
+var lgua = [];
 var gua = $.ajax({
     url:"http://gua.antonwibisono.com/api/public/caves/",
     apiToken: "434refce",
     dataType: "json",
     type: "post",
 }).done(function(st){
-  
   $.each(st.data, function(i, gua){
-    states.push(gua.name);
-    //alert(gua.name);
+    lgua.push(gua.name);
   });
 });
 
@@ -47,8 +45,8 @@ $('#the-basics .typeahead').typeahead({
   minLength: 1
 },
 {
-  name: 'states',
+  name: 'lgua',
   displayKey: 'value',
-  source: substringMatcher(states)
+  source: substringMatcher(lgua)
 });
 });
